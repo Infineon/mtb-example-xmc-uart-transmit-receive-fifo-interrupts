@@ -50,7 +50,7 @@
 * Defines
 *******************************************************************************/
 /* Bytes of data to be transmitted */
-#define NUM_DATA                        251
+#define NUM_DATA                        9
 
 /* Set interrupt priority for the USIC0_0_IRQn */
 #define USIC0_0_IRQn_PRIORITY           63
@@ -58,14 +58,14 @@
 /* Set interrupt priority for the USIC0_1_IRQn */
 #define USIC0_1_IRQn_PRIORITY           62
 
-#ifdef TARGET_KIT_XMC14_BOOT_001
+#if (UC_SERIES == XMC14)
 /* Set bit  */
 #define GPIO_OUTPUT_LEVEL_HIGH          0x10000U 
 /* Reset bit */
 #define  GPIO_OUTPUT_LEVEL_LOW          0x1U
 #endif
 
-#ifdef TARGET_KIT_XMC47_RELAX_V1
+#if (UC_SERIES == XMC47)
 /* Reset bit */
 #define GPIO_OUTPUT_LEVEL_LOW           0x10000U 
 /* Set bit  */  
@@ -112,7 +112,7 @@ void USIC0_0_IRQHandler(void)
     {
         /* Wait if the TX FIFO is full */
         while(XMC_USIC_CH_TXFIFO_IsFull(CYBSP_DEBUG_UART_HW));
-        
+    
         /* Fill the TX FIFO with the next element in the tx_data buffer */
         XMC_UART_CH_Transmit(CYBSP_DEBUG_UART_HW, tx_data[tx_index]);
         tx_index++;
