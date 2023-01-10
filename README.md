@@ -19,8 +19,16 @@ The TX buffer sends 251 bytes by USIC0_CH1 using the TX FIFO size of 8 bytes. Th
 
 ## Supported kits (make variable 'TARGET')
 
+- [XMC1100 boot kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc11_boot_001/) (`KIT_XMC11_BOOT_001`)
+- [XMC1200 boot kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc12_boot_001/) (`KIT_XMC12_BOOT_001`)
+- [XMC1300 boot kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc13_boot_001/) (`KIT_XMC13_BOOT_001`)
 - [XMC1400 boot kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc14_boot_001/) (`KIT_XMC14_BOOT_001`) - Default value of `TARGET`
+- [XMC4200 Platform2Go kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc_plt2go_xmc4200/) (`KIT_XMC_PLT2GO_XMC4200`)
+- [XMC4300 relax EtherCAT kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc43_relax_ecat_v1/) (`KIT_XMC43_RELAX_ECAT_V1`)
+- [XMC4400 Platform2Go kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc_plt2go_xmc4400/) (`KIT_XMC_PLT2GO_XMC4400`)
+- [XMC4500 relax kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc45_relax_v1/) (`KIT_XMC45_RELAX_V1`)
 - [XMC4700 relax kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc47_relax_v1/) (`KIT_XMC47_RELAX_V1`)
+- [XMC4800 relax EtherCAT kit](https://www.infineon.com/cms/en/product/evaluation-boards/kit_xmc48_relax_ecat_v1/) (`KIT_XMC48_RELAX_ECAT_V1`)
 
 ## Hardware setup
 
@@ -105,6 +113,21 @@ The following example will clone the "[UART transmit receive FIFO interrupts](ht
 
 2. Connect the RX pin with the TX pin using an external wire. On the XMC1400 boot kit, connect pin P1.3 to pin P1.2; on the XMC4700 relax kit, connect pin P6.3 to P6.4.
 
+   **Table 1. Pin connections to the UART TX and RX pin **
+
+| Development kit | TX | RX |
+| --- | --- | --- | --- | --- | --- |
+| KIT_XMC11_BOOT_001 | 1[2] | 1[3] |
+| KIT_XMC12_BOOT_001 | 1[2] | 1[3] |
+| KIT_XMC13_BOOT_001 | 1[2] | 1[3] |
+| KIT_XMC14_BOOT_001 | 1[2] | 1[3] |
+| KIT_XMC_PLT2GO_XMC4200| 1[5] | 1[4] |
+| KIT_XMC_PLT2GO_XMC4400| 2[5] | 2[2] |
+| KIT_XMC45_RELAX_V1 | 1[5] | 1[4] |
+| KIT_XMC47_RELAX_V1 | 6[4] | 6[3] |
+| KIT_XMC43_RELAX_ECAT_V1 | 1[7] | 1[4] |
+| KIT_XMC48_RELAX_ECAT_V1 | 6[4] | 6[3] |
+
 3. Program the board using Eclipse IDE for ModusToolbox&trade; software:
 
    1. Select the application project in the Project Explorer.
@@ -178,6 +201,7 @@ Document title: *CE232725* - *XMC&trade; MCU: UART transmit receive FIFO interru
  1.0.0   | New code example
  1.1.0   | Added support for new kits
  2.0.0   | Updated to support ModusToolbox™ software v3.0; CE will not be backward compatible with previous versions of ModusToolbox™ software
+ 2.1.0   | Added support for new kits
 ------
 
 All other trademarks or registered trademarks referenced herein are the property of their respective owners.

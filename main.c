@@ -58,18 +58,18 @@
 /* Set interrupt priority for the USIC0_1_IRQn */
 #define USIC0_1_IRQn_PRIORITY           62
 
-#if (UC_SERIES == XMC14)
+#if (UC_FAMILY == XMC1)
 /* Set bit  */
 #define GPIO_OUTPUT_LEVEL_HIGH          0x10000U 
 /* Reset bit */
 #define  GPIO_OUTPUT_LEVEL_LOW          0x1U
 #endif
 
-#if (UC_SERIES == XMC47)
+#if (UC_FAMILY == XMC4)
 /* Reset bit */
-#define GPIO_OUTPUT_LEVEL_LOW           0x10000U 
-/* Set bit  */  
-#define  GPIO_OUTPUT_LEVEL_HIGH         0x1U 
+#define GPIO_OUTPUT_LEVEL_LOW           0x10000U
+/* Set bit  */
+#define  GPIO_OUTPUT_LEVEL_HIGH         0x1U
 #endif
 
 /*******************************************************************************
